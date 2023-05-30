@@ -1,33 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-using Dominio;
+﻿using Dominio;
 using Negocio;
+using System;
+using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 namespace TPWeb
 {
     public partial class Default : System.Web.UI.Page
     {
-		public List<Articulo> listaArticulos = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-			try
-			{
-				if (!IsPostBack)
-				{
-					ArticuloNegocio articuloNegocio = new ArticuloNegocio();
-					listaArticulos = articuloNegocio.listar();
+            try
+            {
+                if (!IsPostBack)
+                {
+                    ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                    List<Articulo> listaArticulos = articuloNegocio.listar();
                     rpCards.DataSource = listaArticulos;
-					rpCards.DataBind();
-				}
-			}
-			catch (Exception ex)
-			{
-				Session.Add("Error", ex);
-			}
+                    rpCards.DataBind();
+                }
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+            }
         }
 
         protected void rpCards_ItemDataBound(object sender, RepeaterItemEventArgs e)
@@ -51,6 +47,26 @@ namespace TPWeb
                         childRepeater.DataBind();
                     }
                 }
+            }
+        }
+
+        protected void txtFiltrar_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string filtro = txtFiltrar.Text;
+                ArticuloNegocio articuloNegocio = new ArticuloNegocio();
+                List<Articulo> listaArticulos = articuloNegocio.listar();
+
+                List<Articulo> listaFiltrada;
+                listaFiltrada = listaArticulos.FindAll(x =>
+                    x.Nombre.ToLower().Contains(filtro.ToLower()));
+                rpCards.DataSource = listaFiltrada;
+                rpCards.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
             }
         }
     }
