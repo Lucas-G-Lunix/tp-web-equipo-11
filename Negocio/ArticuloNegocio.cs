@@ -183,7 +183,7 @@ namespace Negocio
             }
         }
 
-        public object buscarArt(int ID)
+        public Articulo buscarArt(int ID)
         {
             Articulo art = new Articulo();
             ArticuloNegocio ArtNegocio = new ArticuloNegocio();
@@ -197,7 +197,6 @@ namespace Negocio
 
             }
             return art;
-
         }
 
     }

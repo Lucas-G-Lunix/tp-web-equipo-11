@@ -19,7 +19,7 @@
                     <asp:Repeater ID="rpCards" runat="server" OnItemDataBound="rpCards_ItemDataBound">
                         <ItemTemplate>
                             <div class="col">
-                                <div class="card">
+                                <div class="card h-100">
                                     <div id="<%# Eval("Id") %>" class="carousel carousel-dark slide card-img-top">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active" data-bs-interval="10000">
@@ -28,7 +28,7 @@
                                             <asp:Repeater ID="rpCarousel" runat="server">
                                                 <ItemTemplate>
                                                     <div class="carousel-item" data-bs-interval="2000">
-                                                        <img src="<%# Container.DataItem %>" class="card-img-top d-block w-100" alt="...">
+                                                        <img src="<%# Container.DataItem %>" class="card-img-top d-block w-100" alt="..." onerror="this.onerror=null; this.src='imgs/image-not-found.jpg'">
                                                     </div>
                                                 </ItemTemplate>
                                             </asp:Repeater>
@@ -45,7 +45,8 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                         <p class="card-text"><%# Eval("Descripcion") %></p>
-                                        <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar Al Carrito" CssClass="btn btn-primary"/>
+                                        <asp:Button ID="btnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-primary" OnClick="btnVerDetalle_Click" CommandName="Id" CommandArgument='<%# Eval("Id")%>' />
+                                        <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar al Carrito" CssClass="btn btn-primary"/>
                                     </div>
                                 </div>
                             </div>

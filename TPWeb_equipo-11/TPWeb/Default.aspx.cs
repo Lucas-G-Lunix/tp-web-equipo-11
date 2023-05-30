@@ -76,5 +76,11 @@ namespace TPWeb
                 Session.Add("Error", ex);
             }
         }
+
+        protected void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            string Id = ((Button)sender).CommandArgument;
+            Response.Redirect("Detalle.aspx?Id=" + Id, false);
+        }
     }
 }
