@@ -23,7 +23,7 @@
                                     <div id="<%# Eval("Id") %>" class="carousel carousel-dark slide card-img-top">
                                         <div class="carousel-inner">
                                             <div class="carousel-item active" data-bs-interval="10000">
-                                                <img src="<%#Eval("ImagenURL[0]") %>" class="card-img-top d-block w-100" alt="..." onerror="this.onerror=null; this.src='https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg'">
+                                                <img src="<%#Eval("ImagenURL[0]") %>" class="card-img-top d-block w-100" alt="..." onerror="this.onerror=null; this.src='imgs/image-not-found.jpg'">
                                             </div>
                                             <asp:Repeater ID="rpCarousel" runat="server">
                                                 <ItemTemplate>
@@ -45,6 +45,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                         <p class="card-text"><%# Eval("Descripcion") %></p>
+                                        <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar Al Carrito" CssClass="btn btn-primary"/>
                                     </div>
                                 </div>
                             </div>
