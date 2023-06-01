@@ -26,12 +26,12 @@ namespace TPWeb
                     rpImagenes.DataSource = seleccionado.ImagenURL;
                     rpImagenes.DataBind();
 
-                    lblCodigo.Text = "Codigo de Articulo: " + seleccionado.Codigo;
-                    lblNombre.Text = "Nombre: " + seleccionado.Nombre;
-                    lblDescripcion.Text = "Descripción: " + seleccionado.Descripcion;
-                    lblMarca.Text = "Marca: " + seleccionado.Marca.Descripcion;
-                    lblCategoria.Text = "Categoria: " + seleccionado.Categoria.Descripcion;
-                    lblPrecio.Text = "Precio: " + seleccionado.Precio.ToString();
+                    lblCodigo.Text = seleccionado.Codigo;
+                    lblNombre.Text = seleccionado.Nombre;
+                    lblDescripcion.Text = seleccionado.Descripcion;
+                    lblMarca.Text = seleccionado.Marca.Descripcion;
+                    lblCategoria.Text = seleccionado.Categoria.Descripcion;
+                    lblPrecio.Text = (Convert.ToInt32(seleccionado.Precio)).ToString();
                 }
             }
 			catch (Exception ex)

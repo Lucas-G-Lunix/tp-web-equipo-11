@@ -42,10 +42,10 @@ namespace TPWeb
                         if (childRepeater != null)
                         {
                             // Bind the child repeater with the data from the parent repeater
-                            List<string> listaImagenes = dataItem.ImagenURL;
+                            //List<string> listaImagenes = ;
                             // eliminamos la primera imagen
-                            listaImagenes.RemoveAt(0);
-                            childRepeater.DataSource = listaImagenes;
+                            //listaImagenes.RemoveAt(0);
+                            childRepeater.DataSource = dataItem.ImagenURL;
                             childRepeater.DataBind();
                         }
                     }

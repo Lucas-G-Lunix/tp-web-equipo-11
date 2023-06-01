@@ -22,12 +22,9 @@
                                 <div class="card h-100">
                                     <div id="<%# Eval("Id") %>" class="carousel carousel-dark slide card-img-top">
                                         <div class="carousel-inner">
-                                            <div class="carousel-item active" data-bs-interval="10000">
-                                                <img src="<%#Eval("ImagenURL[0]") %>" class="card-img-top d-block w-100" alt="..." onerror="this.onerror=null; this.src='imgs/image-not-found.jpg'">
-                                            </div>
                                             <asp:Repeater ID="rpCarousel" runat="server">
                                                 <ItemTemplate>
-                                                    <div class="carousel-item" data-bs-interval="2000">
+                                                    <div class="carousel-item  <%# Container.ItemIndex == 0 ? "active" : "" %>" data-bs-interval="2000">
                                                         <img src="<%# Container.DataItem %>" class="card-img-top d-block w-100" alt="..." onerror="this.onerror=null; this.src='imgs/image-not-found.jpg'">
                                                     </div>
                                                 </ItemTemplate>
