@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Optimization;
 using System.Web.UI;
 
-namespace CarritoCompras_LeonardoMendoza
+namespace TPWeb
 {
     public class BundleConfig
     {
