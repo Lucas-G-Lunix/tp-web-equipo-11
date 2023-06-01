@@ -11,7 +11,7 @@ namespace TPWeb
 {
 
 
-    public partial class CarritoCompra
+    public partial class CarritoCompra2
     {
 
         /// <summary>
