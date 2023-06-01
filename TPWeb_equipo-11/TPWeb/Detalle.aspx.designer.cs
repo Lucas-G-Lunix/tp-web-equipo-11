@@ -24,15 +24,6 @@ namespace TPWeb
         protected global::System.Web.UI.WebControls.Repeater rpImagenes;
 
         /// <summary>
-        /// lblNombre control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
-
-        /// <summary>
         /// lblMarca control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace TPWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblMarca;
+
+        /// <summary>
+        /// lblCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
 
         /// <summary>
         /// lblCodigo control.
@@ -51,13 +51,13 @@ namespace TPWeb
         protected global::System.Web.UI.WebControls.Label lblCodigo;
 
         /// <summary>
-        /// lblCategoria control.
+        /// lblNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoria;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
 
         /// <summary>
         /// lblPrecio control.
@@ -76,5 +76,23 @@ namespace TPWeb
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
+
+        /// <summary>
+        /// btnVolver control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnVolver;
+
+        /// <summary>
+        /// btnAgregarCarrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnAgregarCarrito;
     }
 }

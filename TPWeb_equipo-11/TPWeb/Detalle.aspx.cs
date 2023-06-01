@@ -39,5 +39,15 @@ namespace TPWeb
 				Session.Add("Error", ex);
 			}
         }
+
+        protected void btnVolver_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx", false);
+        }
+
+        protected void btnAgregarCarrito_Click(object sender, EventArgs e)
+        {
+            // Logica carrito
+        }
     }
 }

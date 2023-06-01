@@ -3,7 +3,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:ScriptManager ID="ScriptManager" runat="server"></asp:ScriptManager>
+    <style>
+        .carousel .carousel-inner {
+            height: 400px;
+        }
+
+        .carousel-inner .carousel-item img {
+            min-height: 200px;
+        }
+
+        @media(max-width:768px) {
+            .carousel .carousel-inner {
+                height:auto;
+            }
+        }
+    </style>
     <asp:UpdatePanel ID="upCards" runat="server">
         <ContentTemplate>
             <div class="container my-3">
@@ -43,7 +57,7 @@
                                         <h5 class="card-title"><%# Eval("Nombre") %></h5>
                                         <p class="card-text"><%# Eval("Descripcion") %></p>
                                         <asp:Button ID="btnVerDetalle" runat="server" Text="Ver Detalle" CssClass="btn btn-primary" OnClick="btnVerDetalle_Click" CommandName="Id" CommandArgument='<%# Eval("Id")%>' />
-                                        <asp:Button ID="btnAgregarCarrito" Text="Agregar a Carrito" runat="server" OnClick="btnAgregarCarrito_Click" class="btn btn-primary btn-success" CommandArgument='<%#Eval("Id") %>' CommandName="ArtId" />
+                                        <asp:Button ID="btnAgregarCarrito" runat="server" Text="Agregar al Carrito" CssClass="btn btn-primary" />
                                     </div>
                                 </div>
                             </div>
