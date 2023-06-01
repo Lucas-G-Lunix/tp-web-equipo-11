@@ -11,7 +11,7 @@
                         <div class="carousel-inner">
                             <asp:Repeater runat="server" ID="rpImagenes">
                                 <ItemTemplate>
-                                    <div class="carousel-item active">
+                                    <div class="carousel-item <%# Container.ItemIndex == 0 ? "active" : "" %>">
                                         <img src="<%# Container.DataItem %>" class="d-block w-100" alt="..." onerror="this.onerror=null; this.src='imgs/image-not-found.jpg'">
                                     </div>
                                 </ItemTemplate>
