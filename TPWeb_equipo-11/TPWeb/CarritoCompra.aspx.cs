@@ -33,7 +33,26 @@ namespace TPWeb
 
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
         {
-     
+            int id = (int)dgvArticulos.SelectedDataKey.Value;
+
+            List<ArtCarrito> listaSession = new List<ArtCarrito>();
+
+            listaSession = (List<ArtCarrito>)Session["ListaCarrito"];
+            ArtCarrito Seleccionado = listaSession.Find(x => x.Id == id);
+
+            listaSession.Remove(Seleccionado);
+            Session["ListaCarrito"] = listaSession;
+
+            dgvArticulos.DataSource = Session["ListaCarrito"];
+            dgvArticulos.DataBind();
+            decimal total = 0;
+            int contador = 0;
+            foreach (var item in listaSession)
+            {
+                total += item.Precio;
+                contador++;
+            }
+            lblPrecio.Text = "TOTAL: $" + total;
 
         }
     }
