@@ -13,5 +13,10 @@ namespace TPWeb
         {
 
         }
+
+        protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
