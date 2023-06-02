@@ -102,6 +102,7 @@ namespace TPWeb
                     artCarrito.oArticulo.Codigo = item.Codigo;
                     artCarrito.oArticulo.ImagenURL = item.ImagenURL;
                     artCarrito.oArticulo.Nombre = item.Nombre;
+                    artCarrito.oArticulo.Marca = item.Marca;
                     artCarrito.oArticulo.Precio = item.Precio;
                 }
             }
