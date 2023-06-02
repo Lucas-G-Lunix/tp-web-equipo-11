@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Dominio;
+using System;
+using System.Collections.Generic;
 
 namespace TPWeb
 {
@@ -6,7 +8,7 @@ namespace TPWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            List<ArtCarrito> listaAriculos = (List<ArtCarrito>)Session["ListaCarrito"];
         }
 
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)

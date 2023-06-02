@@ -108,6 +108,7 @@ namespace TPWeb
             /*List<ArtCarrito> ListaCarrito = (List<ArtCarrito>)Session["ListaCarrito"]; */
             List<ArtCarrito> ListaCarrito = ListaSessionCarrito();
             ListaCarrito.Add(artCarrito);
+            Session["ListaCarrito"] = ListaCarrito;
             Response.Redirect("Default.aspx");
         }
 
