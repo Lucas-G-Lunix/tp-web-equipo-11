@@ -10,9 +10,9 @@
         <asp:GridView runat="server" ID="dgvArticulos" OnSelectedIndexChanged="dgvArticulos_SelectedIndexChanged" DataKeyNames="Id" CssClass="table-striped alert-warning table" AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField HeaderText="Id" DataField="Id" HeaderStyle-CssClass="Oculto" ItemStyle-CssClass="Oculto" />
-                <asp:BoundField HeaderText="oArticulo.Codigo" DataField="Codigo" />
-                <asp:BoundField HeaderText="oArticulo.Nombre" DataField="Nombre" />
-                <asp:BoundField HeaderText="oArticulo.Precio" DataField="Precio" />
+                <asp:BoundField HeaderText="Codigo" DataField="oArticulo.Codigo" />
+                <asp:BoundField HeaderText="Nombre" DataField="oArticulo.Nombre" />
+                <asp:BoundField HeaderText="Precio" DataField="oArticulo.Precio" />
                 <%--<asp:CommandField ShowSelectButton="true" SelectText="Eliminar" HeaderText="Acción" />--%>
             </Columns>
         </asp:GridView>
