@@ -46,9 +46,9 @@
                                 <h5 class="mb-0">$<%# Convert.ToInt32(Eval("oArticulo.Precio")) %></h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <a href="#!" class="text-danger">
+                                <asp:LinkButton ID="btnEliminarArticulo" runat="server" CssClass="text-danger" OnClick="btnEliminarArticulo_Click">
                                     <i class="bi bi-trash"></i>
-                                </a>
+                                </asp:LinkButton>
                             </div>
                         </ItemTemplate>
                         <FooterTemplate>
@@ -60,7 +60,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                            <button type="button" class="btn btn-warning btn-block btn-lg">Pagar</button>
                         </div>
                     </div>
 

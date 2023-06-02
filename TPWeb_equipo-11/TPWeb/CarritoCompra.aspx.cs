@@ -27,5 +27,10 @@ namespace TPWeb
         {
 
         }
+
+        protected void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
