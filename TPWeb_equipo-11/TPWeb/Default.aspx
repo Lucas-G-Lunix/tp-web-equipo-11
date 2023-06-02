@@ -14,7 +14,7 @@
 
         @media(max-width:768px) {
             .carousel .carousel-inner {
-                height:auto;
+                height: auto;
             }
         }
     </style>

@@ -1,9 +1,9 @@
 ﻿
+using Dominio;
+using Negocio;
 using System;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
-using Dominio;
-using Negocio;
 
 namespace TPWeb
 {
@@ -86,31 +86,29 @@ namespace TPWeb
 
         protected void btnAgregarCarrito_Click(object sender, EventArgs e)
         {
-            ArtCarrito nuevo = new ArtCarrito();
+            ArtCarrito artCarrito = new ArtCarrito();
+            artCarrito.oArticulo = new Articulo();
             int Id = int.Parse(((Button)sender).CommandArgument);
 
             Articulo art = new Articulo();
-            ArticuloNegocio ArtNegocio = new ArticuloNegocio();
-            List<Articulo> lista = ArtNegocio.listar();
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            List<Articulo> lista = negocio.listar();
 
             foreach (var item in lista)
             {
                 if (item.Id == Id)
                 {
-                    nuevo.Id = item.Id;
-                    nuevo.Codigo = item.Codigo;
-                    nuevo.Nombre = item.Nombre;
-                    nuevo.Precio = item.Precio;
+                    artCarrito.oArticulo.Id = item.Id;
+                    artCarrito.oArticulo.Codigo = item.Codigo;
+                    artCarrito.oArticulo.ImagenURL = item.ImagenURL;
+                    artCarrito.oArticulo.Nombre = item.Nombre;
+                    artCarrito.oArticulo.Precio = item.Precio;
                 }
             }
             /*List<ArtCarrito> ListaCarrito = (List<ArtCarrito>)Session["ListaCarrito"]; */
             List<ArtCarrito> ListaCarrito = ListaSessionCarrito();
-            ListaCarrito.Add(nuevo);
+            ListaCarrito.Add(artCarrito);
             Response.Redirect("Default.aspx");
-
-
-
-
         }
 
         private List<ArtCarrito> ListaSessionCarrito()

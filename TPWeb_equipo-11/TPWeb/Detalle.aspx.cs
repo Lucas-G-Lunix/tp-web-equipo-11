@@ -1,12 +1,6 @@
 ﻿using Dominio;
 using Negocio;
 using System;
-using System.Collections.Generic;
-using System.EnterpriseServices;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace TPWeb
 {
@@ -14,8 +8,8 @@ namespace TPWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-			try
-			{
+            try
+            {
                 if (Request.QueryString["Id"] != null)
                 {
                     int id = int.Parse(Request.QueryString["Id"].ToString());
@@ -34,10 +28,10 @@ namespace TPWeb
                     lblPrecio.Text = (Convert.ToInt32(seleccionado.Precio)).ToString();
                 }
             }
-			catch (Exception ex)
-			{
-				Session.Add("Error", ex);
-			}
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex);
+            }
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)

@@ -14,7 +14,7 @@
 
         @media(max-width:768px) {
             .carousel .carousel-inner {
-                height:auto;
+                height: auto;
             }
         }
     </style>
@@ -66,7 +66,7 @@
                         <asp:LinkButton ID="btnVolver" runat="server" CssClass="btn btn-danger w-50 text-center me-3" OnClick="btnVolver_Click">
                             <i class="fas fa-undo-alt"></i> Volver
                         </asp:LinkButton>
-                        <asp:LinkButton ID="btnAgregarCarrito" runat="server" CssClass="btn btn-success btn-agregar-carrito flex-shrink-0 w-50"  OnClick="btnAgregarCarrito_Click">
+                        <asp:LinkButton ID="btnAgregarCarrito" runat="server" CssClass="btn btn-success btn-agregar-carrito flex-shrink-0 w-50" OnClick="btnAgregarCarrito_Click">
                             <i class="fas fa-cart-plus"></i> Agregar al carrito
                         </asp:LinkButton>
                     </div>
@@ -76,6 +76,3 @@
 
     </section>
 </asp:Content>
-
-
-
