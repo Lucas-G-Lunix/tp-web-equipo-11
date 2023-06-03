@@ -109,8 +109,26 @@ namespace TPWeb
             /*List<ArtCarrito> ListaCarrito = (List<ArtCarrito>)Session["ListaCarrito"]; */
             List<ArtCarrito> ListaCarrito = ListaSessionCarrito();
             artCarrito.IdItem = ListaCarrito.Count;
-            ListaCarrito.Add(artCarrito);
-            Session["ListaCarrito"] = ListaCarrito;
+            artCarrito.Cantidad = 1;
+            bool existe = false;
+            foreach (ArtCarrito item in ListaCarrito)
+            {
+                if (item.oArticulo.Id == Id)
+                {
+                    item.Cantidad++;
+                    existe = true;
+                }
+            }
+            if (existe)
+            {
+                Session["ListaCarrito"] = ListaCarrito;
+            }
+            else
+            {
+                ListaCarrito.Add(artCarrito);
+                Session["ListaCarrito"] = ListaCarrito;
+            }
+            
             Response.Redirect("Default.aspx");
         }
 

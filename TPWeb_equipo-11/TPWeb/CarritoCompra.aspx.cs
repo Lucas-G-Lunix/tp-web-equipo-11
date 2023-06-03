@@ -35,5 +35,41 @@ namespace TPWeb
             Session["ListaCarrito"] = listaArticulos;
             Response.Redirect("CarritoCompra.aspx");
         }
+
+        protected void btnMenosCantidad_Click(object sender, EventArgs e)
+        {
+            int idItem = int.Parse(((LinkButton)sender).CommandArgument);
+            List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+            foreach (ArtCarrito item in listaArticulos)
+            {
+                if (item.IdItem == idItem)
+                {
+                    if (item.Cantidad > 1)
+                    {
+                        item.Cantidad--;
+                    }
+                }
+            }
+            Session["ListaCarrito"] = listaArticulos;
+            Response.Redirect("CarritoCompra.aspx");
+        }
+
+        protected void btnMasCantidad_Click(object sender, EventArgs e)
+        {
+            int idItem = int.Parse(((LinkButton)sender).CommandArgument);
+            List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+            foreach (ArtCarrito item in listaArticulos)
+            {
+                if (item.IdItem == idItem)
+                {
+                    item.Cantidad++;
+                }
+            }
+            Session["ListaCarrito"] = listaArticulos;
+            Response.Redirect("CarritoCompra.aspx");
+        }
+        protected void txtCantidadArticulos_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
