@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dominio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,8 @@ namespace TPWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            lblCantElementosCarrito.Text = Session["ListaCarrito"] != null ?
+              ((List<ArtCarrito>)Session["ListaCarrito"]).Count().ToString() : 0.ToString();
         }
     }
 }

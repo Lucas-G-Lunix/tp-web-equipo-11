@@ -29,24 +29,12 @@
                                 <p><span class="text-muted">Codigo: </span><%# Eval("oArticulo.Codigo") %> <span class="text-muted">Marca: </span><%# Eval("oArticulo.Marca") %></p>
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                <button class="btn btn-link px-2"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                                    <i class="fas fa-minus"></i>
-                                </button>
-
-                                <input id="form1" min="0" name="quantity" value="1" type="number"
-                                    class="form-control form-control-sm" />
-
-                                <button class="btn btn-link px-2"
-                                    onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                                    <i class="fas fa-plus"></i>
-                                </button>
                             </div>
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                 <h5 class="mb-0">$<%# Convert.ToInt32(Eval("oArticulo.Precio")) %></h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <asp:LinkButton ID="btnEliminarArticulo" runat="server" CssClass="text-danger" OnClick="btnEliminarArticulo_Click">
+                                <asp:LinkButton ID="btnEliminarArticulo" runat="server" CssClass="text-danger" OnClick="btnEliminarArticulo_Click" CommandName="Id" CommandArgument='<%# Eval("Id")%> '">
                                     <i class="bi bi-trash"></i>
                                 </asp:LinkButton>
                             </div>
