@@ -8,7 +8,7 @@ namespace Dominio
 {
     public class ArtCarrito
     {
-        public int Id { get; set; }
+        public int IdItem { get; set; }
 
         public int Cantidad { get; set; }
 

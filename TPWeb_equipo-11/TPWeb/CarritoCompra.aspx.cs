@@ -1,6 +1,7 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 namespace TPWeb
 {
@@ -10,8 +11,8 @@ namespace TPWeb
         {
             try
             {
-                List<ArtCarrito> listaAriculos = (List<ArtCarrito>)Session["ListaCarrito"];
-                rpArticulos.DataSource = listaAriculos;
+                List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+                rpArticulos.DataSource = listaArticulos;
                 rpArticulos.DataBind();
             }
             catch (Exception)
@@ -19,8 +20,6 @@ namespace TPWeb
 
                 throw;
             }
-            //dgvArticulos.DataSource = listaAriculos;
-            //dgvArticulos.DataBind();
         }
 
         protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,7 +29,11 @@ namespace TPWeb
 
         protected void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-
+            int idItem = int.Parse(((LinkButton)sender).CommandArgument);
+            List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+            listaArticulos.RemoveAt(idItem);
+            Session["ListaCarrito"] = listaArticulos;
+            Response.Redirect("CarritoCompra.aspx");
         }
     }
 }
