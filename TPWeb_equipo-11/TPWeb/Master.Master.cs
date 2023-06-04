@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace TPWeb
 {
@@ -12,8 +9,15 @@ namespace TPWeb
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            lblCantElementosCarrito.Text = Session["ListaCarrito"] != null ?
+            try
+            {
+                lblCantElementosCarrito.Text = Session["ListaCarrito"] != null ?
               ((List<ArtCarrito>)Session["ListaCarrito"]).Count().ToString() : 0.ToString();
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error:", ex);
+            }
         }
     }
 }
