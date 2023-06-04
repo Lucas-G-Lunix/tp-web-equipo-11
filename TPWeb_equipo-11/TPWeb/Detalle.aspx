@@ -18,12 +18,12 @@
             }
         }
     </style>
-    <section class="py-5">
-        <div class="container px-4 px-lg-5 my-5">
-            <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-md-6">
-                    <div class="carousel-inner">
-                        <div id="carouselExample" class="carousel slide">
+
+    <div class="py-5 container px-4 px-lg-5 my-5">
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-5">
+                    <div id="carouselExample" class="carousel slide">
                             <div class="carousel-inner">
                                 <asp:Repeater runat="server" ID="rpImagenes">
                                     <ItemTemplate>
@@ -42,27 +42,16 @@
                                 <span class="visually-hidden">Next</span>
                             </button>
                         </div>
-                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="small mb-1">
-                        <asp:Label runat="server" Text="" ID="lblMarca" CssClass="text-uppercase text-muted brand"></asp:Label>
-                    </div>
-                    <div class="small mb-1">
-                        <asp:Label runat="server" Text="" ID="lblCategoria" CssClass="text-uppercase text-muted" />
-                    </div>
-                    <div class="small mb-1">
-                        <asp:Label runat="server" Text="" ID="lblCodigo" CssClass="text-uppercase text-muted"></asp:Label>
-                    </div>
-                    <h1 class="display-5 fw-bolder">
-                        <asp:Label runat="server" Text="" ID="lblNombre"></asp:Label></h1>
-                    <div class="fs-5 mb-5">
-                        <asp:Label runat="server" Text="" ID="lblPrecio"></asp:Label><span>$</span>
-                    </div>
-                    <p class="lead">
-                        <asp:Label runat="server" Text="" ID="lblDescripcion"></asp:Label>
-                    </p>
-                    <div class="d-flex">
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h3 class="card-title"><asp:Label runat="server" Text="" ID="lblNombre"></asp:Label></h3>
+                        <h4 class="card-title"><asp:Label runat="server" Text="" ID="lblPrecio"></asp:Label><span>$</span></h4>
+                        <p class="card-text"><asp:Label runat="server" Text="" ID="lblDescripcion"></asp:Label></p>
+                        <p class="card-text"><small class="text-body-secondary text-uppercase"><asp:Label runat="server" Text="" ID="lblMarca" CssClass="text-uppercase text-muted brand"></asp:Label></small></p>
+                        <p class="card-text"><small class="text-body-secondary"><asp:Label runat="server" Text="" ID="lblCodigo" CssClass="text-uppercase text-muted"></asp:Label></small></p>
+                        <p class="card-text"><small class="text-body-secondary"><asp:Label runat="server" Text="" ID="lblCategoria" CssClass="text-uppercase text-muted" /></small></p>
+                        <div class="d-flex">
                         <asp:LinkButton ID="btnVolver" runat="server" CssClass="btn btn-danger w-50 text-center me-3" OnClick="btnVolver_Click">
                             <i class="fas fa-undo-alt"></i> Volver
                         </asp:LinkButton>
@@ -70,9 +59,9 @@
                             <i class="fas fa-cart-plus"></i> Agregar al carrito
                         </asp:LinkButton>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-    </section>
+    </div>
 </asp:Content>

@@ -22,54 +22,70 @@ namespace TPWeb
             }
         }
 
-        protected void dgvArticulos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         protected void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-            int idItem = int.Parse(((LinkButton)sender).CommandArgument);
-            List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
-            listaArticulos.RemoveAt(idItem);
-            Session["ListaCarrito"] = listaArticulos;
-            Response.Redirect("CarritoCompra.aspx");
+            try
+            {
+                int idItem = int.Parse(((LinkButton)sender).CommandArgument);
+                List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+                if (idItem >= 0)
+                {
+                    listaArticulos.RemoveAt(idItem);
+                }
+                Session["ListaCarrito"] = listaArticulos;
+                Response.Redirect("CarritoCompra.aspx");
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error:", ex);
+            }
         }
 
         protected void btnMenosCantidad_Click(object sender, EventArgs e)
         {
-            int idItem = int.Parse(((LinkButton)sender).CommandArgument);
-            List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
-            foreach (ArtCarrito item in listaArticulos)
+            try
             {
-                if (item.IdItem == idItem)
+                int idItem = int.Parse(((LinkButton)sender).CommandArgument);
+                List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+                foreach (ArtCarrito item in listaArticulos)
                 {
-                    if (item.Cantidad > 1)
+                    if (item.IdItem == idItem)
                     {
-                        item.Cantidad--;
+                        if (item.Cantidad > 1)
+                        {
+                            item.Cantidad--;
+                        }
                     }
                 }
+                Session["ListaCarrito"] = listaArticulos;
+                Response.Redirect("CarritoCompra.aspx");
             }
-            Session["ListaCarrito"] = listaArticulos;
-            Response.Redirect("CarritoCompra.aspx");
+            catch (Exception ex)
+            {
+                Session.Add("Error:", ex);
+            }
         }
 
         protected void btnMasCantidad_Click(object sender, EventArgs e)
         {
-            int idItem = int.Parse(((LinkButton)sender).CommandArgument);
-            List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
-            foreach (ArtCarrito item in listaArticulos)
+            try
             {
-                if (item.IdItem == idItem)
+                int idItem = int.Parse(((LinkButton)sender).CommandArgument);
+                List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
+                foreach (ArtCarrito item in listaArticulos)
                 {
-                    item.Cantidad++;
+                    if (item.IdItem == idItem)
+                    {
+                        item.Cantidad++;
+                    }
                 }
+                Session["ListaCarrito"] = listaArticulos;
+                Response.Redirect("CarritoCompra.aspx");
             }
-            Session["ListaCarrito"] = listaArticulos;
-            Response.Redirect("CarritoCompra.aspx");
-        }
-        protected void txtCantidadArticulos_TextChanged(object sender, EventArgs e)
-        {
+            catch (Exception ex)
+            {
+                Session.Add("Error:", ex);
+            }
         }
     }
 }

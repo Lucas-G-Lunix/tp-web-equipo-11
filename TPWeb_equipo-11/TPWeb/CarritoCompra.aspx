@@ -33,12 +33,11 @@
                                     <i class="bi bi-dash-square"></i>
                                 </asp:LinkButton>
 
-                                <asp:TextBox ID="txtCantidadArticulos" runat="server" TextMode="Number" Text='<%# Eval("Cantidad") %>' CssClass="form-control form-control-sm" OnTextChanged="txtCantidadArticulos_TextChanged" min="1"></asp:TextBox>
+                                <asp:TextBox ID="txtCantidadArticulos" runat="server" TextMode="Number" Text='<%# Eval("Cantidad") %>' CssClass="form-control form-control-sm" min="1"></asp:TextBox>
 
                                 <asp:LinkButton ID="btnMasCantidad" runat="server" OnClick="btnMasCantidad_Click" OnClientClick="this.parentNode.querySelector('input[type=number]').stepUp()" CssClass="btn btn-link px-2" CommandName="Id" CommandArgument='<%# Eval("IdItem")%>'>
                                     <i class="bi bi-plus-square"></i>
                                 </asp:LinkButton>
-
                             </div>
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                 <h5 class="mb-0">$<%# Convert.ToInt32(Eval("oArticulo.Precio")) %></h5>
@@ -58,7 +57,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <button type="button" class="btn btn-warning btn-block btn-lg">Pagar</button>
+                            <button type="button" class="btn btn-info btn-block btn-lg">Pagar</button>
                         </div>
                     </div>
 
