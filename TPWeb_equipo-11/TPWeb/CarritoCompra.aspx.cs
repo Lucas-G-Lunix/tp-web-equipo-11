@@ -12,13 +12,21 @@ namespace TPWeb
             try
             {
                 List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
-                rpArticulos.DataSource = listaArticulos;
-                rpArticulos.DataBind();
+                if (listaArticulos != null)
+                {
+                    rpArticulos.DataSource = listaArticulos;
+                    rpArticulos.DataBind();
+                    int totalPagar = 0;
+                    foreach (ArtCarrito item in listaArticulos)
+                    {
+                        totalPagar += Convert.ToInt32(item.oArticulo.Precio) * item.Cantidad;
+                    }
+                    lblTotal.Text = "Total a Pagar: " + totalPagar.ToString() + "$";
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Session.Add("Error:", ex);
             }
         }
 

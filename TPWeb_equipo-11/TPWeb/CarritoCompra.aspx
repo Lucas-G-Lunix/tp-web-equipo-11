@@ -57,7 +57,17 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <button type="button" class="btn btn-info btn-block btn-lg">Pagar</button>
+
+                            <div class="d-flex justify-content-between bd-highlight mb-3">
+                                <button type="button" class="btn btn-info">Pagar</button>
+                                <h2><asp:Label ID="lblTotal" runat="server" Text="Label"></asp:Label></h2>
+                            </div>
+
+
+                            <div class="d-flex">
+                                
+                                
+                            </div>
                         </div>
                     </div>
 
