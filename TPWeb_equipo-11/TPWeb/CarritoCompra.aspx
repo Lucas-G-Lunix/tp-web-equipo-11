@@ -43,7 +43,7 @@
                                 <h5 class="mb-0">$<%# Convert.ToInt32(Eval("oArticulo.Precio")) %></h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <asp:LinkButton ID="btnEliminarArticulo" runat="server" CssClass="text-danger" OnClick="btnEliminarArticulo_Click" CommandName="Id" CommandArgument='<%# Eval("IdItem")%>'>
+                                <asp:LinkButton ID="btnEliminarArticulo" runat="server" CssClass="text-danger" OnClick="btnEliminarArticulo_Click" CommandName="Id" CommandArgument='<%# Eval("oArticulo.Id")%>'>
                                     <i class="bi bi-trash"></i>
                                 </asp:LinkButton>
                             </div>

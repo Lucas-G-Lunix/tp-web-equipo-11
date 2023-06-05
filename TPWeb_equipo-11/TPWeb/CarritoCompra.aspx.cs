@@ -1,6 +1,9 @@
 ﻿using Dominio;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
 using System.Web.UI.WebControls;
 
 namespace TPWeb
@@ -36,10 +39,15 @@ namespace TPWeb
             {
                 int idItem = int.Parse(((LinkButton)sender).CommandArgument);
                 List<ArtCarrito> listaArticulos = (List<ArtCarrito>)Session["ListaCarrito"];
-                if (idItem >= 0)
+
+                foreach (var item in listaArticulos.Select((value, i) => (value, i)))
                 {
-                    listaArticulos.RemoveAt(idItem);
+                    if (idItem == item.value.oArticulo.Id)
+                    {
+                        listaArticulos.RemoveAt(item.i);
+                    }
                 }
+
                 Session["ListaCarrito"] = listaArticulos;
                 Response.Redirect("CarritoCompra.aspx");
             }
